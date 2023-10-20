@@ -1,0 +1,40 @@
+/* https://medium.com/@elad/normalize-css-or-css-reset-9d75175c5d1e */
+/****** KENNETH KEIM'S RESET *******/
+
+/*** box sizing border-box for all elements ***/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* BUTTONS, LINKS, AND LISTS RESET */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  background-color: transparent;
+  color: inherit;
+  border-width: 0;
+}
+ul,
+ol,
+dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* JUST MARGIN */
+figure {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+/* h1, h2, h3, h4, h5, h6{margin:0;} */

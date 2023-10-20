@@ -1,0 +1,30 @@
+// variable semantics
+// the naming of $primary-bright-dark communicates:
+// whether it's the primary color to reach for
+// whether it's bright/muted for color psychology
+// whether it's dark/light for background/foreground color pairings
+
+// theme colors
+$primary-bright-dark: #daa520;
+$primary-bright-dark-hover: #c3941d;
+$secondary: #777;
+$dark: #222;
+$light: #fff;
+
+// set colors of each section of the page
+// $bg-navbar:
+$text-navbar: $dark;
+$bg-footer: $dark;
+$text-footer: $light;
+$bg-page: $light;
+$text-page: $dark;
+
+$text-href: $primary-bright-dark;
+$text-href-hover: $primary-bright-dark-hover;
+
+$width-md: 600px;
+$body-spc: 15px;
+
+// update .page-content min height if changing this
+$footerH: 100px;
+$navbarH: 50px;
