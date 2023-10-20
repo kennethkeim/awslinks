@@ -1,3 +1,6 @@
 <article>
   <p>{{ resource?.name }}</p>
+  <p *ngIf="resource?.cloudwatch">
+    <a [href]="resource?.cloudwatch?.url" target="_blank">Cloudwatch Logs</a>
+  </p>
 </article>

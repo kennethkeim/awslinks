@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { mockResources } from './resources/resources';
+import { getResources, mockConfig, mockResources } from './resources/resources';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,5 @@ import { mockResources } from './resources/resources';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public resources = mockResources;
+  public resources = getResources(mockResources, mockConfig);
 }
