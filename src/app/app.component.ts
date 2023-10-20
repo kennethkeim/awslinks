@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { mockResources } from './resources/resources';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'aws-links';
+  public resources = mockResources;
 }
