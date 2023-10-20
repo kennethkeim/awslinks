@@ -1,5 +1,7 @@
 <main>
   <ul>
-    <li *ngFor="let resource of resources">{{ resource.name }}</li>
+    <li *ngFor="let resource of resources">
+      <app-resource-card [resource]="resource"></app-resource-card>
+    </li>
   </ul>
 </main>
