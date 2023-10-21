@@ -7,5 +7,6 @@ import { getResources, mockConfig, mockResources } from './resources/resources';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public resources = getResources(mockResources, mockConfig);
+  public readonly resources = getResources(mockResources, mockConfig);
+  public searchInput = '';
 }

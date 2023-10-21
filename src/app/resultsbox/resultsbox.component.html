@@ -1,1 +1,7 @@
-<p>searchbox works!</p>
+<article *ngIf="searchInput">
+  <ul *ngIf="{ results: results$ | async } as ctx">
+    <li *ngFor="let result of ctx.results">
+      {{ result.name }}
+    </li>
+  </ul>
+</article>
