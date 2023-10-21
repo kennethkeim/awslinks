@@ -4,14 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ResourceCardComponent } from './resource-card/resource-card.component';
 import { SearchComponent } from './search/search.component';
-import { SearchboxComponent } from './searchbox/searchbox.component';
+import { ResultsboxComponent } from './resultsbox/resultsbox.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResourceCardComponent,
     SearchComponent,
-    SearchboxComponent,
+    ResultsboxComponent,
   ],
   imports: [BrowserModule],
   providers: [],
