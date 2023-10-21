@@ -54,7 +54,7 @@ export const mockResources: BaseResource[] = [
 /** Only supports AWS Lambdas for now */
 export const getResources = (
   resources: BaseResource[],
-  config: Config
+  config: Config,
 ): Resource[] => {
   const { region } = config;
 
