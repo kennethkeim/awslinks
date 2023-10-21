@@ -1,7 +1,8 @@
 <article *ngIf="searchInput">
   <ul *ngIf="{ results: results$ | async } as ctx">
     <li *ngFor="let result of ctx.results">
-      {{ result.name }}
+      <!-- TODO: add arrow to indicate opening in new tab -->
+      <a [href]="result.cloudwatch.url" target="_blank">{{ result.name }}</a>
     </li>
   </ul>
 </article>
