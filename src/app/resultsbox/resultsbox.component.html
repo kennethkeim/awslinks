@@ -4,18 +4,22 @@
 >
   <ul>
     <li *ngFor="let result of ctx.results" class="mb-2 last:mb-0">
-      <!-- TODO: add arrow to indicate opening in new tab -->
       <a
         [href]="result.cloudwatch.url"
         target="_blank"
-        class="flex items-center"
+        class="flex justify-between items-center"
       >
-        <img
-          src="../../assets/cloudwatch-logo-tiny.svg"
-          alt="Cloudwatch Logo"
-          class="mr-3"
-        />
-        <span>{{ result.name }}</span>
+        <div class="flex items-center">
+          <img
+            src="../../assets/cloudwatch-logo-tiny.svg"
+            alt="Cloudwatch Logo"
+            class="mr-3"
+          />
+
+          <span>{{ result.name }}</span>
+        </div>
+
+        <app-link-arrow-icon [size]="4"></app-link-arrow-icon>
       </a>
     </li>
   </ul>
