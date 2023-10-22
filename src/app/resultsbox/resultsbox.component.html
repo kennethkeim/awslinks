@@ -1,8 +1,29 @@
-<article *ngIf="searchInput">
-  <ul *ngIf="{ results: results$ | async } as ctx">
-    <li *ngFor="let result of ctx.results">
+<article
+  *ngIf="searchInput && { results: results$ | async } as ctx"
+  class="absolute top-12 left-0 right-0 bg-slate-50 border border-slate-300 text-sm rounded-lg p-2.5 dark:bg-slate-700 dark:border-slate-600"
+>
+  <ul>
+    <li *ngFor="let result of ctx.results" class="mb-2 last:mb-0">
       <!-- TODO: add arrow to indicate opening in new tab -->
-      <a [href]="result.cloudwatch.url" target="_blank">{{ result.name }}</a>
+      <a
+        [href]="result.cloudwatch.url"
+        target="_blank"
+        class="flex items-center"
+      >
+        <img
+          src="../../assets/cloudwatch-logo-tiny.svg"
+          alt="Cloudwatch Logo"
+          class="mr-3"
+        />
+        <span>{{ result.name }}</span>
+      </a>
     </li>
   </ul>
+
+  <p
+    *ngIf="ctx.results?.length === 0"
+    class="text-sm text-slate-400 dark:text-slate-400"
+  >
+    No matches
+  </p>
 </article>
