@@ -1,5 +1,5 @@
-<main>
-  <section>
+<main class="p-7">
+  <section class="max-w-xl mx-auto mb-7">
     <app-search (inputChange)="searchInput = $event"></app-search>
 
     <app-resultsbox
@@ -11,7 +11,7 @@
     </app-resultsbox>
   </section>
 
-  <section>
+  <section class="max-w-xl mx-auto">
     <ul>
       <li *ngFor="let resource of resources">
         <app-resource-card [resource]="resource"></app-resource-card>
