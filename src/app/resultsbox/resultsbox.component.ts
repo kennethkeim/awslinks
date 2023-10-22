@@ -5,7 +5,6 @@ import { BehaviorSubject, map } from 'rxjs';
 @Component({
   selector: 'app-resultsbox',
   templateUrl: './resultsbox.component.html',
-  styleUrls: ['./resultsbox.component.scss'],
 })
 export class ResultsboxComponent implements OnChanges {
   @Input() searchInput?: string;
