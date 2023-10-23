@@ -1,13 +1,11 @@
 <!-- https://flowbite.com/docs/forms/search-input/ -->
-<form>
-  <label for="simple-search" class="sr-only">Search Lambda name</label>
+<label for="simple-search" class="sr-only">Search Lambda name</label>
 
-  <input
-    type="text"
-    id="simple-search"
-    (keyup)="onSearchInput($event)"
-    class="bg-slate-50 border border-slate-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    placeholder="Search lambda name..."
-    autofocus
-  />
-</form>
+<input
+  type="text"
+  id="simple-search"
+  (keyup)="handleKeyup($event)"
+  class="bg-slate-50 border border-slate-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+  placeholder="Search lambda name..."
+  autofocus
+/>

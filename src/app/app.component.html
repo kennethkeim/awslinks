@@ -2,15 +2,9 @@
   class="p-7 bg-white text-slate-700 dark:bg-slate-800 dark:text-white h-screen"
 >
   <section class="max-w-xl mx-auto mb-7 relative">
-    <app-search (inputChange)="searchInput = $event"></app-search>
+    <app-search (onKeyup)="keyup.next($event)"></app-search>
 
-    <app-resultsbox
-      *ngIf="searchInput"
-      [searchInput]="searchInput"
-      [resources]="resources"
-      class="results"
-    >
-    </app-resultsbox>
+    <app-resultsbox [keyup$]="keyup$" [resources]="resources"></app-resultsbox>
   </section>
 
   <section class="max-w-xl mx-auto">
