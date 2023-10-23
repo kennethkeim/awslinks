@@ -21,7 +21,15 @@ export class ResultsboxComponent implements OnInit {
     map((search) => {
       return this.resources.filter((resource) => {
         if (!search) return false;
-        return resource.name.toLowerCase().includes(search.toLowerCase());
+        let [name, env] = search.split(' ');
+        // env = env || 'dev';
+        const matchesName = resource.name
+          .toLowerCase()
+          .includes(name.toLowerCase());
+        const matchesEnv = env
+          ? resource.name.toLowerCase().includes(env.toLowerCase())
+          : true;
+        return matchesName && matchesEnv;
       });
     })
   );

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { getResources, mockConfig, mockResources } from './resources/resources';
+import { getResources } from './resources/resources';
 import { Subject } from 'rxjs';
 import { KeyEvent } from './models/search.model';
 
@@ -8,7 +8,7 @@ import { KeyEvent } from './models/search.model';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  public readonly resources = getResources(mockResources, mockConfig);
+  public readonly resources = getResources();
   public readonly keyup = new Subject<KeyEvent>();
   public readonly keyup$ = this.keyup.asObservable();
 }
