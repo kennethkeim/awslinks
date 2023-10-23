@@ -1,11 +1,13 @@
 <article
   *ngIf="(search$ | async) && { results: results$ | async } as ctx"
-  class="absolute top-12 left-0 right-0 bg-slate-50 border border-slate-300 text-sm rounded-lg p-2.5 dark:bg-slate-700 dark:border-pink-600"
+  class="absolute top-12 left-0 right-0 bg-slate-50 border border-pink-600 text-sm rounded-lg p-2.5 dark:bg-slate-700"
 >
   <ul>
     <li
       *ngFor="let result of ctx.results; let i = index"
-      class="mb-2 last:mb-0 {{ activeIndex === i ? 'bg-pink-700' : '' }}"
+      class="mb-2 last:mb-0 {{
+        activeIndex === i ? 'bg-pink-700 text-white' : ''
+      }}"
     >
       <a
         [href]="result.cloudwatch.url"
