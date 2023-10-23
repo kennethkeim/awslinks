@@ -1,13 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "~normalize.css/normalize.css";
-
 /* You can add global styles to this file, and also import other style files */
 @import "./scss/_typography.scss";
-// @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~normalize.css/normalize.css";
 @import "./scss/_reset.scss";
 @import "./scss/_variables.scss";
+
+// https://flowbite.com/docs/getting-started/angular/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 // FORMS
 input.ng-valid.ng-touched,
@@ -24,10 +26,4 @@ textarea.ng-invalid.ng-touched {
 
 [disabled] {
   cursor: not-allowed;
-}
-
-// LISTS
-ul {
-  padding: 0 0 0 0;
-  margin: 0;
 }
