@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-link-arrow-icon',
   template: `
     <svg
+      *ngIf="size"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
