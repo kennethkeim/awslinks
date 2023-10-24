@@ -8,7 +8,8 @@ import { Component, Input } from '@angular/core';
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      class="w-{{ size }} h-{{ size }}"
+      [attr.width]="size + 'px'"
+      [attr.height]="size + 'px'"
     >
       <path
         fill-rule="evenodd"
@@ -19,6 +20,6 @@ import { Component, Input } from '@angular/core';
   `,
 })
 export class LinkArrowIconComponent {
-  /** Size in tailwind units. */
-  @Input() size = 4;
+  /** Size in pixels. */
+  @Input() size = 24;
 }
