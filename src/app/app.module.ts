@@ -6,6 +6,7 @@ import { ResourceCardComponent } from './resource-card/resource-card.component';
 import { SearchComponent } from './search/search.component';
 import { ResultsboxComponent } from './resultsbox/resultsbox.component';
 import { LinkArrowIconComponent } from './icons/link-arrow-icon.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { SunIconComponent } from './icons/sun-icon.component';
 import { IconComponent } from './icons/icon.component';
 
@@ -16,6 +17,7 @@ import { IconComponent } from './icons/icon.component';
     SearchComponent,
     ResultsboxComponent,
     LinkArrowIconComponent,
+    NavbarComponent,
     SunIconComponent,
     IconComponent,
   ],

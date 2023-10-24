@@ -1,17 +1,22 @@
-<main
-  class="p-7 bg-white text-slate-700 dark:bg-slate-800 dark:text-white h-screen"
->
-  <section class="max-w-xl mx-auto mb-7 relative">
-    <app-search (onKeyup)="keyup.next($event)"></app-search>
+<div class="bg-white text-slate-700 dark:bg-slate-800 dark:text-white h-screen">
+  <app-navbar></app-navbar>
 
-    <app-resultsbox [keyup$]="keyup$" [resources]="resources"></app-resultsbox>
-  </section>
+  <main class="p-7">
+    <section class="max-w-xl mx-auto mb-7 relative">
+      <app-search (onKeyup)="keyup.next($event)"></app-search>
 
-  <section class="max-w-xl mx-auto">
-    <ul>
-      <li *ngFor="let resource of resources">
-        <app-resource-card [resource]="resource"></app-resource-card>
-      </li>
-    </ul>
-  </section>
-</main>
+      <app-resultsbox
+        [keyup$]="keyup$"
+        [resources]="resources"
+      ></app-resultsbox>
+    </section>
+
+    <section class="max-w-xl mx-auto">
+      <ul>
+        <li *ngFor="let resource of resources">
+          <app-resource-card [resource]="resource"></app-resource-card>
+        </li>
+      </ul>
+    </section>
+  </main>
+</div>
