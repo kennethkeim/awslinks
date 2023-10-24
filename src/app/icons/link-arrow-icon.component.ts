@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { IconComponent } from './icon.component';
 
 @Component({
   selector: 'app-link-arrow-icon',
   template: `
     <svg
-      *ngIf="size"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
@@ -19,7 +19,4 @@ import { Component, Input } from '@angular/core';
     </svg>
   `,
 })
-export class LinkArrowIconComponent {
-  /** Size in pixels. */
-  @Input() size = 24;
-}
+export class LinkArrowIconComponent extends IconComponent {}
