@@ -1,9 +1,11 @@
 <div
   class="bg-white text-slate-700 dark:bg-slate-800 dark:text-white min-h-screen"
 >
-  <app-navbar></app-navbar>
+  <app-navbar
+    (settingsClick)="this.settingsPane = !this.settingsPane"
+  ></app-navbar>
 
-  <main class="p-7">
+  <main *ngIf="!settingsPane" class="p-7">
     <section class="max-w-xl mx-auto mb-7 relative">
       <app-search (onKeyup)="keyup.next($event)"></app-search>
 
@@ -19,6 +21,12 @@
           <app-resource-card [resource]="resource"></app-resource-card>
         </li>
       </ul>
+    </section>
+  </main>
+
+  <main *ngIf="settingsPane" class="p-7">
+    <section class="max-w-xl mx-auto">
+      <app-settings></app-settings>
     </section>
   </main>
 </div>

@@ -11,4 +11,5 @@ export class AppComponent {
   public readonly resources = getResources();
   public readonly keyup = new Subject<KeyEvent>();
   public readonly keyup$ = this.keyup.asObservable();
+  public settingsPane = false;
 }
