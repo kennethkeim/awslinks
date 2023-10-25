@@ -1,4 +1,10 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  Renderer2,
+} from '@angular/core';
 
 const DARK_MODE_KEY = 'aws-links-dark-mode';
 const DARK_MODE_CLASS = 'dark';
@@ -8,6 +14,8 @@ const DARK_MODE_CLASS = 'dark';
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent implements OnInit {
+  @Output() public readonly settingsClick = new EventEmitter<void>();
+
   constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {

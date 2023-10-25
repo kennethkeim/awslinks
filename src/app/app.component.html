@@ -1,24 +1,30 @@
 <div
   class="bg-white text-slate-700 dark:bg-slate-800 dark:text-white min-h-screen"
 >
-  <app-navbar></app-navbar>
+  <app-navbar (settingsClick)="settingsPane = !settingsPane"></app-navbar>
 
-  <main class="p-7">
+  <main *ngIf="!settingsPane" class="p-7">
     <section class="max-w-xl mx-auto mb-7 relative">
       <app-search (onKeyup)="keyup.next($event)"></app-search>
 
       <app-resultsbox
         [keyup$]="keyup$"
-        [resources]="resources"
+        [resources]="(resources$ | async) ?? []"
       ></app-resultsbox>
     </section>
 
     <section class="max-w-xl mx-auto">
       <ul>
-        <li *ngFor="let resource of resources">
+        <li *ngFor="let resource of resources$ | async">
           <app-resource-card [resource]="resource"></app-resource-card>
         </li>
       </ul>
+    </section>
+  </main>
+
+  <main *ngIf="settingsPane" class="p-7">
+    <section class="max-w-xl mx-auto">
+      <app-settings (saved)="settingsPane = false"></app-settings>
     </section>
   </main>
 </div>

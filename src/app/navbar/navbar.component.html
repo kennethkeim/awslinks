@@ -1,5 +1,9 @@
-<nav class="p-2 flex justify-end">
-  <button (click)="onThemeBtnClick()">
+<nav class="p-2 px-3 flex justify-end">
+  <button class="ml-3" (click)="onThemeBtnClick()">
     <app-sun-icon [size]="30"></app-sun-icon>
+  </button>
+
+  <button class="ml-3" (click)="settingsClick.emit()">
+    <app-settings-icon [size]="28"></app-settings-icon>
   </button>
 </nav>

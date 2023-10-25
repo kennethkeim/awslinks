@@ -9,6 +9,9 @@ import { LinkArrowIconComponent } from './icons/link-arrow-icon.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SunIconComponent } from './icons/sun-icon.component';
 import { IconComponent } from './icons/icon.component';
+import { SettingsIconComponent } from './icons/settings-icon.component';
+import { SettingsComponent } from './settings/settings.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,8 +23,10 @@ import { IconComponent } from './icons/icon.component';
     NavbarComponent,
     SunIconComponent,
     IconComponent,
+    SettingsIconComponent,
+    SettingsComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
