@@ -11,6 +11,7 @@ import { SunIconComponent } from './icons/sun-icon.component';
 import { IconComponent } from './icons/icon.component';
 import { SettingsIconComponent } from './icons/settings-icon.component';
 import { SettingsComponent } from './settings/settings.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { SettingsComponent } from './settings/settings.component';
     SettingsIconComponent,
     SettingsComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
