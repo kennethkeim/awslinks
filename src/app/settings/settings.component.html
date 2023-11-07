@@ -5,7 +5,7 @@
     </label>
 
     <textarea
-      class="bg-slate-50 border border-slate-300 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      [class]="textareaClasses"
       id="resource-names"
       placeholder="customers-v1,products-v1"
       formControlName="resources"
@@ -18,7 +18,7 @@
     </label>
 
     <textarea
-      class="bg-slate-50 border border-slate-300 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      [class]="textareaClasses"
       id="environments"
       placeholder="dev,test,prod"
       formControlName="envs"
