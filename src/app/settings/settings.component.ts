@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { SettingsService } from '../shared/settings.service';
 
 @Component({
   selector: 'app-settings',
@@ -7,8 +8,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SettingsComponent {
   public readonly form = new FormGroup({
-    resources: new FormControl(null, [Validators.required]),
-    envs: new FormControl(null),
+    resources: new FormControl<string>('', [Validators.required]),
+    envs: new FormControl<string>(''),
   });
 
   public readonly textareaClasses = [
@@ -28,4 +29,10 @@ export class SettingsComponent {
     'dark:focus:ring-blue-500',
     'dark:focus:border-blue-500',
   ];
+
+  constructor(private readonly settingsService: SettingsService) {}
+
+  public onSubmit(): void {
+    this.settingsService.saveSettings(this.form.value);
+  }
 }
