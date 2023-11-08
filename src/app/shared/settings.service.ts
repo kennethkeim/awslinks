@@ -22,7 +22,7 @@ export class SettingsService {
     this.setResources(this.getSettings());
   }
 
-  private getSettings(): Settings {
+  public getSettings(): Settings {
     return {
       resources: localStorage.getItem(RESOURCES_KEY),
       envs: localStorage.getItem(ENVS_KEY),
@@ -30,7 +30,8 @@ export class SettingsService {
   }
 
   public saveSettings(formData: Settings): void {
-    const { resources, envs } = formData;
+    const resources = formData.resources?.trim();
+    const envs = formData.envs?.trim();
 
     if (resources) {
       localStorage.setItem(RESOURCES_KEY, resources);
@@ -44,7 +45,11 @@ export class SettingsService {
       localStorage.removeItem(ENVS_KEY);
     }
 
-    this.setResources(formData);
+    this.setResources({ resources, envs });
+  }
+
+  private getCWLink(lambdaName: string): string {
+    return `https://${REGION}.console.aws.amazon.com/cloudwatch/home?region=${REGION}#logsV2:log-groups/log-group/$252Faws$252Flambda$252F${lambdaName}/log-events$3Fstart$3D-3600000`;
   }
 
   private setResources(settings: Settings): void {
@@ -54,13 +59,18 @@ export class SettingsService {
     const mapped: Resource[] = [];
 
     resources?.forEach((r) => {
-      envs?.forEach((env) => {
-        const fullName = `${r}-${env}`;
+      if (!envs?.length) {
         mapped.push({
-          name: fullName,
-          cloudwatch: {
-            url: `https://${REGION}.console.aws.amazon.com/cloudwatch/home?region=${REGION}#logsV2:log-groups/log-group/$252Faws$252Flambda$252F${fullName}/log-events$3Fstart$3D-3600000`,
-          },
+          name: r,
+          cloudwatch: { url: this.getCWLink(r) },
+        });
+      }
+
+      envs?.forEach((env) => {
+        const nameWithEnv = `${r}-${env}`;
+        mapped.push({
+          name: nameWithEnv,
+          cloudwatch: { url: this.getCWLink(nameWithEnv) },
         });
       });
     });

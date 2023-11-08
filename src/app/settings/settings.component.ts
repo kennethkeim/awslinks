@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SettingsService } from '../shared/settings.service';
 
@@ -7,6 +7,8 @@ import { SettingsService } from '../shared/settings.service';
   templateUrl: './settings.component.html',
 })
 export class SettingsComponent {
+  @Output() public saved = new EventEmitter<void>();
+
   public readonly form = new FormGroup({
     resources: new FormControl<string>('', [Validators.required]),
     envs: new FormControl<string>(''),
@@ -30,9 +32,12 @@ export class SettingsComponent {
     'dark:focus:border-blue-500',
   ];
 
-  constructor(private readonly settingsService: SettingsService) {}
+  constructor(private readonly settingsService: SettingsService) {
+    this.form.patchValue(this.settingsService.getSettings());
+  }
 
   public onSubmit(): void {
     this.settingsService.saveSettings(this.form.value);
+    this.saved.emit();
   }
 }

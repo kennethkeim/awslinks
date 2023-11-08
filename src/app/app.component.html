@@ -1,9 +1,7 @@
 <div
   class="bg-white text-slate-700 dark:bg-slate-800 dark:text-white min-h-screen"
 >
-  <app-navbar
-    (settingsClick)="this.settingsPane = !this.settingsPane"
-  ></app-navbar>
+  <app-navbar (settingsClick)="settingsPane = !settingsPane"></app-navbar>
 
   <main *ngIf="!settingsPane" class="p-7">
     <section class="max-w-xl mx-auto mb-7 relative">
@@ -26,7 +24,7 @@
 
   <main *ngIf="settingsPane" class="p-7">
     <section class="max-w-xl mx-auto">
-      <app-settings></app-settings>
+      <app-settings (saved)="settingsPane = false"></app-settings>
     </section>
   </main>
 </div>
